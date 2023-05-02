@@ -9,28 +9,27 @@
 
 (function() {
     'use strict';
-    // Wait for 1 seconds before executing the rest of the script
-    setTimeout(function() {
+    // Wait for 1 second before executing the rest of the script
+    setTimeout(() => {
         // Check if there are any scrollbars that are disabled by CSS or JS
-        var hasDisabledScrollbars = false;
-        [document.documentElement, document.body].forEach(function(el) {
-            var style = window.getComputedStyle(el);
+        let hasDisabledScrollbars = false;
+        for (let el of [document.documentElement, document.body]) {
+            let style = window.getComputedStyle(el);
             if (style.overflow === 'hidden' || style.overflowX === 'hidden' || style.overflowY === 'hidden') {
                 hasDisabledScrollbars = true;
+                break; // No need to check further elements
             }
-            return undefined; // Explicitly return undefined to avoid assignment
-        });
+        }
         // If there are no disabled scrollbars, exit the script
         if (!hasDisabledScrollbars) {
             return;
         }
         // Retrieve the document and body elements from the DOM
-        var [doc, body] = [document.documentElement, document.body];
+        let [doc, body] = [document.documentElement, document.body];
         // Ensure that both elements display scrollbars only when necessary
-        [doc, body].forEach(function(el) {
+        for (let el of [doc, body]) {
             el.style.overflow = 'auto';
-            return undefined; // Explicitly return undefined to avoid assignment
-        });
+        }
         // Override any CSS rules that modify scrollbars
         Object.defineProperty(document, 'styleSheets', {
             get: () => [],
@@ -42,15 +41,13 @@
             configurable: false
         });
         // Block any scripts that attempt to scroll the window or the elements
-        ['scrollTo', 'scrollTop'].forEach(function(prop) {
-            [window, doc, body].forEach(function(obj) {
+        for (let prop of ['scrollTo', 'scrollTop']) {
+            for (let obj of [window, doc, body]) {
                 Object.defineProperty(obj, prop, {
                     set: () => {},
                     configurable: false
                 });
-                return undefined; // Explicitly return undefined to avoid assignment
-            });
-            return undefined; // Explicitly return undefined to avoid assignment
-        });
-    }, 1000); // 1 seconds in milliseconds
+            }
+        }
+    }, 1000); // 1 second in milliseconds
 })();
