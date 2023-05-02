@@ -1,6 +1,6 @@
 # Scrollbar Fixer
 
-Scrollbar Fixer is a user script that fixes scrollbars on any website and prevents them from being hidden, overridden or manipulated by other scripts or stylesheets. It works on any browser that supports user scripts and does not require any permissions or grants.
+Scrollbar Fixer is a user script that fixes scrollbars on any website and prevents them from being hidden, overridden or manipulated by other scripts or stylesheets.
 
 ## Features
 
