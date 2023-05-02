@@ -9,11 +9,18 @@ Scrollbar Fixer is a user script that fixes scrollbars on any website and preven
 - Returns the current scroll position of the document element
 - Prevents any scripts that try to scroll the window or the elements
 
-## Usage
+## How to use this script?
 
-Once installed, Scrollbar Fixer will run automatically on every website you visit. You can disable or enable it from your user script manager menu.
+1. To use this script, you need to install a browser extension that allows you to run custom JavaScript code on any website. Some examples are Tampermonkey, Greasemonkey, or Violentmonkey.
+2. After installing the extension, create a new script and copy the code from this repository into it. Save and activate the script.
+3. Enjoy scrolling on any website.
+
+## Feedback and support
+
+If you have any issues, suggestions, or questions about this script, please feel free to [open an issue](https://github.com/richkmls/scrollbar-fixer/issues).
 
 ## Disclaimer
 
 Scrollbar Fixer is provided "as is" without any warranty of any kind, either expressed or implied. The author is not liable for any damages or losses that may arise from using Scrollbar Fixer. 
+
 See License for more information.
