@@ -15,6 +15,8 @@ Scrollbar Fixer is a user script that fixes scrollbars on any website and preven
 2. After installing the extension, create a new script and copy the code from this repository into it. Save and activate the script.
 3. Enjoy scrolling on any website.
 
+Please be advised that this script may unintentionally disable certain website functions. It may be necessary to deactivate the script in order to access these features.
+
 ## Feedback and support
 
 If you have any issues, suggestions, or questions about this script, please feel free to [open an issue](https://github.com/richkmls/scrollbar-fixer/issues).
