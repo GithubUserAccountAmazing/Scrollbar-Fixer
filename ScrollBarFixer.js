@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrollbar Fixer
 // @author       github.com/richkmls
-// @version      1.0
+// @version      1.1
 // @description  A script that fixes scrollbars on any website and prevents them from being hidden, overridden or manipulated
 // @match        *://*/*
 // @exclude      https://github.com/*
