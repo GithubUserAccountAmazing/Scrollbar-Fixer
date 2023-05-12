@@ -1,11 +1,17 @@
 // ==UserScript==
 // @name         Scrollbar Fixer
 // @author       github.com/richkmls
-// @version      1.1
+// @version      1.0
 // @description  A script that fixes scrollbars on any website and prevents them from being hidden, overridden or manipulated
 // @match        *://*/*
+// @exclude      https://github.com/*
 // @grant        none
 // ==/UserScript==
+
+// To prevent the script from running on additional websites, you can add more @exclude directives.
+// Simply add a new line above with the format: // @exclude [URL or URL pattern]
+// For example, to exclude the website http://example.net/, you would add the following line:
+// @exclude http://example.net/*
 
 (function() {
     'use strict';
