@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrollbar Fixer
 // @author       github.com/richkmls
-// @version      1.0
+// @version      1.1
 // @description  A script that fixes scrollbars on any website and prevents them from being hidden, overridden or manipulated
 // @match        *://*/*
 // @grant        none
@@ -9,20 +9,35 @@
 
 (function() {
     'use strict';
-    // Wait for 1 second before executing the rest of the script
-    setTimeout(() => {
-        // Check if there are any scrollbars that are disabled by CSS or JS
+    // Initialize counter and timeout variables
+    let counter = 0;
+    let timeout = 1000;
+    // Set the number of extra tries
+    let extratries = 1;
+    // Define the fixScrollbars function
+    function fixScrollbars() {
+        // Initialize the hasDisabledScrollbars variable
         let hasDisabledScrollbars = false;
+        // Check if the overflow property is set to hidden for the documentElement or body
         for (let el of [document.documentElement, document.body]) {
             let style = window.getComputedStyle(el);
             if (style.overflow === 'hidden' || style.overflowX === 'hidden' || style.overflowY === 'hidden') {
                 hasDisabledScrollbars = true;
-                break; // No need to check further elements
+                break;
             }
         }
-        // If there are no disabled scrollbars, exit the script
+        // If scrollbars are not disabled
         if (!hasDisabledScrollbars) {
-            return;
+            // If the counter is less than the number of extra tries
+            if (counter < extratries) {
+                // Increment the counter and try again.
+                counter++;
+                // Call the fixScrollbars function again
+                setTimeout(fixScrollbars, timeout);
+            } else {
+                // If the counter is equal to or greater than the number of extra tries, return and do not repeat the script
+                return;
+            }
         }
         // Retrieve the document and body elements from the DOM
         let [doc, body] = [document.documentElement, document.body];
@@ -49,5 +64,6 @@
                 });
             }
         }
-    }, 1000); // 1 second in milliseconds
+    }
+    setTimeout(fixScrollbars, timeout);
 })();
