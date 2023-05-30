@@ -16,8 +16,10 @@ Some websites may obscure or customize the scrollbars to reduce their usability.
 ## How to use this script?
 
 1. To use this script, you need to install a browser extension that enables you to execute custom JavaScript code on any website. Some examples are Tampermonkey, Greasemonkey, or Violentmonkey.
-2. After installing the extension, create a new script and copy the code from this repository into it. Save and activate the script.
-3. Enjoy scrolling on any website.
+2. Create a new script and copy the code from this repository into it. Save and activate the script.
+    - Alternatively, with Tampermonkey installed: navigate to https://github.com/RichKMLS/Scrollbar-Fixer/raw/main/ScrollBarFixer.user.js to instantly install.
+
+4. Enjoy scrolling on any website.
 
 ## Feedback and support
 
